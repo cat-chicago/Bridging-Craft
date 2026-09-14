@@ -1,6 +1,7 @@
-import { useState } from 'react'
-import { createRoot } from 'react-dom/client'
 import './styles.css'
+
+const { useState } = React
+const { createRoot } = ReactDOM
 
 const Arrow = () => <span aria-hidden="true">↗</span>
 
