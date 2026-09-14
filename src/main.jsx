@@ -1,52 +1,54 @@
-import { useState } from 'react'
-import { createRoot } from 'react-dom/client'
 import './styles.css'
 
+const { useState } = React
+const { createRoot } = ReactDOM
+
 const Arrow = () => <span aria-hidden="true">↗</span>
+const substack = 'https://catalina348157.substack.com/p/bridging-chapters'
+const awards = 'https://artesaniasdecolombia.com.co/PortalAC/C_proyectos/ganadores-de-la-medalla-a-la-maestria-artesanal-2022_15467'
+const makers = [
+  { name: 'Gladys Bello', place: 'El Carmen de Viboral · Antioquia', craft: 'Hand-painted ceramics', text: 'Recognized by Artesanías de Colombia as an expert in the ceramics of El Carmen de Viboral and invited to demonstrate the craft. A starting point for exploring the region’s distinctive relationship between clay, painted decoration, and the table.', url: 'https://artesaniasdecolombia.com.co/PortalAC/Noticia/ceramica-de-el-carmen-de-viboral-primer-taller-del-2015_5611' },
+  { name: 'Marcela Mémbora', place: 'Litoral del San Juan · Chocó', craft: 'Wounaan werregue weaving', text: 'Her learning began with chocolatillo and continued through observing her grandmother weave werregue. The precision of the fiber work and the cultural meaning of its geometric designs invite attention beyond the object’s surface.', url: 'https://www.artesaniasdecolombia.com.co/PortalAC/C_tienda/exposicion-de-werregue-en-bogota_10160' },
+  { name: 'Jesús Ceballos', place: 'Pasto · Nariño', craft: 'Barniz de Pasto / mopa-mopa', text: 'A master artisan working in decoration, research, and innovation in barniz de Pasto since 1970; recipient of the 2006 mastery medal. His practice offers a way into the expressive possibilities of this distinctive decorative technique.', url: 'https://artesaniasdecolombia.com.co/PortalAC/DirectorioDetalle/jesus-ceballos_3706' },
+  { name: 'Laureano Melo', place: 'Ráquira · Boyacá', craft: 'Modeled clay', text: 'Through his workshop Laurearte, founded in 1995, Melo makes decorative pieces and kitchen utensils and teaches clay modeling. His 2022 contemporary mastery medal recognizes a practice connecting everyday use with the continuity of Ráquira’s ceramic tradition.', url: awards },
+  { name: 'Magdalena Aponte', place: 'Tibaná · Boyacá', craft: 'Basketry & weaving', text: 'A teacher and weaver whose practice spans several basketry fibers, Aponte helped establish Tibaná’s Paja Blanca and Fique artisans’ association. Awarded Maestra de Maestros in 2022, she exemplifies the transmission of material knowledge across generations.', url: awards },
+]
 
 function App() {
   const [open, setOpen] = useState(false)
   const close = () => setOpen(false)
   return <>
     <header className="nav">
-      <a className="wordmark" href="#top" onClick={close}>Bridging <i>Craft</i></a>
+      <div className="brand"><a className="wordmark" href="#top" onClick={close}>Bridging <i>Craft</i></a><p className="brand-credit">a page from <a href={substack}>Bridging Chapters</a></p></div>
       <button className="menu" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="site-menu">{open ? 'Close' : 'Menu'}</button>
       <nav id="site-menu" className={open ? 'open' : ''} aria-label="Main navigation">
-        <a href="#about" onClick={close}>About</a><a href="#path" onClick={close}>The path</a><a href="#notes" onClick={close}>Notes</a>
+        <a href="#about" onClick={close}>About</a><a href="#artisans" onClick={close}>Artisans</a><a href="#notes" onClick={close}>Notes</a>
       </nav>
     </header>
     <main id="top">
       <section className="hero" aria-labelledby="hero-title">
-        <p className="eyebrow">A practice in becoming</p>
-        <h1 id="hero-title">Between the<br /><em>made</em> and<br />the imagined.</h1>
-        <div className="hero-bottom"><p>Bridging Craft is a record of crossing into the art and design world—with attention, humility, and an enduring curiosity for how things come to life.</p><a href="#about" className="round-link" aria-label="Read the story">↓</a></div>
+        <p className="eyebrow">Colombian craft · Collectors · Interiors</p>
+        <h1 id="hero-title">Between the <em>made</em><br />and the spaces<br />we inhabit.</h1>
+        <div className="hero-bottom"><p>I am building a bridge between Colombian artists and artisans and the people who collect their work or bring it into interiors—designers, clients, and others drawn to craft. It begins with understanding the maker, the material, and the cultural value of a piece.</p><a href="#about" className="round-link" aria-label="Read the story">↓</a></div>
         <div className="arc" aria-hidden="true"></div>
       </section>
 
       <section className="manifesto" id="about" aria-labelledby="about-title">
         <p className="side-label">01 — A new vantage</p>
-        <div><h2 id="about-title">A career can be a foundation, not a finish line.</h2><p className="intro">After two decades in marketing, I am making a deliberate turn toward art, materiality, and space. Not away from what came before, but toward a different way of seeing.</p></div>
-        <p className="quote">“The work begins with learning to look.”</p>
-      </section>
-
-      <section className="path" id="path" aria-labelledby="path-title">
-        <div className="section-head"><p className="side-label">02 — The path</p><h2 id="path-title">Learning the language<br />of design.</h2></div>
-        <div className="timeline">
-          <article><span>01</span><h3>Two decades<br />in marketing</h3><p>A practiced understanding of audiences, ideas, and the subtle work of making connections.</p></article>
-          <article><span>02</span><h3>IDI online<br />program</h3><p>Study in space, materials, and design thinking—building fluency in the field’s language, not claiming a practice within it.</p></article>
-          <article><span>03</span><h3>Florence,<br />on the horizon</h3><p>A full-time interior design diploma awaits, alongside the slower work of developing an eye and a community across the arts.</p></article>
-        </div>
+        <div><h2 id="about-title">Learning to become<br />the bridge.</h2><p className="intro">After a 20-year career in marketing, I am turning toward art, craft, and interiors, developing the discernment and relationships this next chapter calls for.</p><div className="story-copy" id="path"><p>I completed the Interior Design Institute (IDI) online program to build fluency in space, materials, and design thinking. My intention is to speak the language of the field and connect people with craft, rather than practice as an interior designer.</p><p>This was a deliberate first step before a full-time interior design diploma in Florence, Italy. Along the way, I am developing my eye, learning from makers, and building connections across the arts.</p></div></div>
       </section>
 
       <section className="principles" aria-labelledby="principles-title">
-        <p className="side-label">03 — What bridges</p>
-        <div><h2 id="principles-title">Curiosity makes<br />the crossing possible.</h2><div className="principle-list"><p><b>01</b> Learn before naming</p><p><b>02</b> Notice what endures</p><p><b>03</b> Make room for the unfamiliar</p></div></div>
+        <p className="side-label">02 — Core vision & philosophy</p>
+        <div><h2 id="principles-title">A deeper relationship<br />with beauty.</h2><p className="vision">To deepen humanity’s relationship with beauty by developing exceptional discernment and becoming a trusted interpreter of artistic and cultural value within the design ecosystem.</p><div className="principle-list"><p><b>01</b> Understand the maker and the material</p><p><b>02</b> Recognize artistic and cultural value</p><p><b>03</b> Connect craft with people and interiors</p></div></div>
       </section>
+
+      <section className="artisans" id="artisans" aria-labelledby="artisans-title"><div className="section-head"><p className="side-label">03 — Featured Colombian artisans</p><div><h2 id="artisans-title">Five makers.<br />Many ways of seeing.</h2><p className="makers-intro">An editorial selection to explore: makers whose documented techniques, teaching, and cultural roots offer meaningful ways to approach Colombian craft. These features do not imply representation or a commercial relationship.</p></div></div><div className="maker-list">{makers.map((maker, index) => <article className="maker" key={maker.name}><span className="maker-number">0{index + 1}</span><div><p className="eyebrow">{maker.place}</p><h3>{maker.name}</h3><p className="craft">{maker.craft}</p></div><div><p className="maker-description">{maker.text}</p><a href={maker.url} className="text-link">Read the artisan’s story <Arrow /></a><p className="source-credit">Source: Artesanías de Colombia</p></div></article>)}</div></section>
 
       <section className="notes" id="notes" aria-labelledby="notes-title">
         <p className="eyebrow">Notes from the threshold</p><h2 id="notes-title">An evolving practice<br />of <em>attention.</em></h2>
         <p>Bridging Craft is a place to follow the questions, references, and encounters that gather along the way.</p>
-        <a className="text-link" href="#top">Return to the beginning <Arrow /></a>
+        <a className="text-link" href={substack}>Read Bridging Chapters <Arrow /></a>
       </section>
     </main>
     <footer><a className="wordmark" href="#top">Bridging <i>Craft</i></a><p>Learning · looking · in between</p><p>© {new Date().getFullYear()}</p></footer>
