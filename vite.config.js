@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   base: '/Bridging-Craft/',
-  plugins: [react()],
+  plugins: [react({ jsxRuntime: 'classic' })],
 })
