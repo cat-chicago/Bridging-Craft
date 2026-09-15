@@ -5,13 +5,47 @@ const { createRoot } = ReactDOM
 
 const Arrow = () => <span aria-hidden="true">↗</span>
 const substack = 'https://catalina348157.substack.com/p/bridging-chapters'
-const awards = 'https://artesaniasdecolombia.com.co/PortalAC/C_proyectos/ganadores-de-la-medalla-a-la-maestria-artesanal-2022_15467'
 const makers = [
-  { name: 'Gladys Bello', place: 'El Carmen de Viboral · Antioquia', craft: 'Hand-painted ceramics', text: 'Recognized by Artesanías de Colombia as an expert in the ceramics of El Carmen de Viboral and invited to demonstrate the craft. A starting point for exploring the region’s distinctive relationship between clay, painted decoration, and the table.', url: 'https://artesaniasdecolombia.com.co/PortalAC/Noticia/ceramica-de-el-carmen-de-viboral-primer-taller-del-2015_5611' },
-  { name: 'Marcela Mémbora', place: 'Litoral del San Juan · Chocó', craft: 'Wounaan werregue weaving', text: 'Her learning began with chocolatillo and continued through observing her grandmother weave werregue. The precision of the fiber work and the cultural meaning of its geometric designs invite attention beyond the object’s surface.', url: 'https://www.artesaniasdecolombia.com.co/PortalAC/C_tienda/exposicion-de-werregue-en-bogota_10160' },
-  { name: 'Jesús Ceballos', place: 'Pasto · Nariño', craft: 'Barniz de Pasto / mopa-mopa', text: 'A master artisan working in decoration, research, and innovation in barniz de Pasto since 1970; recipient of the 2006 mastery medal. His practice offers a way into the expressive possibilities of this distinctive decorative technique.', url: 'https://artesaniasdecolombia.com.co/PortalAC/DirectorioDetalle/jesus-ceballos_3706' },
-  { name: 'Laureano Melo', place: 'Ráquira · Boyacá', craft: 'Modeled clay', text: 'Through his workshop Laurearte, founded in 1995, Melo makes decorative pieces and kitchen utensils and teaches clay modeling. His 2022 contemporary mastery medal recognizes a practice connecting everyday use with the continuity of Ráquira’s ceramic tradition.', url: awards },
-  { name: 'Magdalena Aponte', place: 'Tibaná · Boyacá', craft: 'Basketry & weaving', text: 'A teacher and weaver whose practice spans several basketry fibers, Aponte helped establish Tibaná’s Paja Blanca and Fique artisans’ association. Awarded Maestra de Maestros in 2022, she exemplifies the transmission of material knowledge across generations.', url: awards },
+  {
+    "name": "Maitamá Tejidos Ancestrales",
+    "place": "Sonsón · Antioquia",
+    "craft": "Ancestral loom weaving",
+    "text": "Yeison Marín carries forward Sonsón’s wool-weaving tradition through Maitamá. Ruanas and perrileño cushions reveal a textile language rooted in family knowledge and the patient rhythm of the loom.",
+    "url": "https://colombiaartesanal.com.co/artesanos/yeison-marin/",
+    "source": "Colombia Artesanal"
+  },
+  {
+    "name": "Carmen Experimental",
+    "place": "El Carmen de Viboral · Antioquia",
+    "craft": "Handmade, hand-decorated ceramics",
+    "text": "A contemporary interpretation of El Carmen de Viboral’s ceramic tradition. Tableware, vases and decorative pieces carry the character of a place where clay and hand-painted detail are part of everyday cultural life.",
+    "url": "https://carmenexperimental.com/nosotros/",
+    "source": "Carmen Experimental"
+  },
+  {
+    "name": "Acanto Artesanías",
+    "place": "Medellín · Antioquia",
+    "craft": "Woodworking & marquetry",
+    "text": "Guillermo Arturo Salazar Yepes works with wood and taracea, creating objects that draw on architecture, culture and nature. Boxes, trays and other crafted pieces invite a closer look at grain, pattern and construction.",
+    "url": "https://www.medellin.gov.co/es/secretaria-desarrollo-economico/direccion-de-negocios/directorio-empresarial/articulos-para-el-hogar/",
+    "source": "Alcaldía de Medellín"
+  },
+  {
+    "name": "Carrielarte y Guarnielería R. Darío Agudelo",
+    "place": "Jericó · Antioquia",
+    "craft": "Traditional guarnielería",
+    "text": "Rubén Darío Agudelo and his family preserve the layered construction and leatherworking knowledge of the Antioquian carriel. Their work is featured here for its living cultural heritage and the possibilities it opens for understanding craft.",
+    "url": "https://colombiaartesanal.com.co/artesanos/ruben-agudelo/",
+    "source": "Colombia Artesanal"
+  },
+  {
+    "name": "Bimbral",
+    "place": "Medellín · Antioquia",
+    "craft": "Wicker & iraca basketry",
+    "text": "Dora Bonilla’s fine-arts background meets José Alfonso Cerón’s family-taught fiber craft. Based in Medellín, their workshop brings together basketry knowledge with roots in Huila and a creative story that also passes through Cauca.",
+    "url": "https://colombiaartesanal.com.co/artesanos/dora-bernarda-bonilla-ipia-y-jose-alfonso-ceron/",
+    "source": "Colombia Artesanal"
+  }
 ]
 
 function App() {
@@ -26,16 +60,17 @@ function App() {
       </nav>
     </header>
     <main id="top">
+      <div className="brand-banner"><img src={`${import.meta.env.BASE_URL}images/bridging-craft-header.png`} alt="Bridging Craft — Cultivating discernment at the intersection of art, heritage, and culture" fetchPriority="high" /></div>
       <section className="hero" aria-labelledby="hero-title">
         <p className="eyebrow">Colombian craft · Collectors · Interiors</p>
         <h1 id="hero-title">Between the <em>made</em><br />and the spaces<br />we inhabit.</h1>
-        <div className="hero-bottom"><p>I am building a bridge between Colombian artists and artisans and the people who collect their work or bring it into interiors—designers, clients, and others drawn to craft. It begins with understanding the maker, the material, and the cultural value of a piece.</p><a href="#about" className="round-link" aria-label="Read the story">↓</a></div>
+        <div className="hero-bottom"><div><p>Colombian craft holds stories worth living with. I am building connections that bring those stories into thoughtfully collected lives and spaces. It begins with understanding the maker, the material, and the cultural value of a piece.</p><a className="text-link intro-cta" href="contact.html">Begin a conversation <Arrow /></a></div><a href="#about" className="round-link" aria-label="Read the story">↓</a></div>
         <div className="arc" aria-hidden="true"></div>
       </section>
 
       <section className="manifesto" id="about" aria-labelledby="about-title">
         <p className="side-label">01 — A new vantage</p>
-        <div><h2 id="about-title">Learning to become<br />the bridge.</h2><p className="intro">After a 20-year career in marketing, I am turning toward art, craft, and interiors, developing the discernment and relationships this next chapter calls for.</p><div className="story-copy" id="path"><p>I completed the Interior Design Institute (IDI) online program to build fluency in space, materials, and design thinking. My intention is to speak the language of the field and connect people with craft, rather than practice as an interior designer.</p><p>This was a deliberate first step before a full-time interior design diploma in Florence, Italy. Along the way, I am developing my eye, learning from makers, and building connections across the arts.</p></div></div>
+        <div><h2 id="about-title">Learning to become<br />the bridge.</h2><p className="intro">After a 20-year career in marketing in the consumer packaged goods (CPG) industry, I am turning toward art, craft, and interiors, developing the discernment and relationships this next chapter calls for.</p><div className="story-copy" id="path"><img className="idi-logo" src={`${import.meta.env.BASE_URL}images/idi-logo.png`} alt="The Interior Design Institute" loading="lazy" /><p>I completed the Interior Design Institute (IDI) online program to build fluency in space, materials, and design thinking—a foundation for understanding how craft and interiors speak to one another.</p><p>This was a deliberate first step before a full-time interior design diploma in Florence, Italy. Along the way, I am developing my eye, learning from makers, and building connections across the arts.</p></div></div>
       </section>
 
       <section className="principles" aria-labelledby="principles-title">
@@ -43,7 +78,7 @@ function App() {
         <div><h2 id="principles-title">A deeper relationship<br />with beauty.</h2><p className="vision">To deepen humanity’s relationship with beauty by developing exceptional discernment and becoming a trusted interpreter of artistic and cultural value within the design ecosystem.</p><div className="principle-list"><p><b>01</b> Understand the maker and the material</p><p><b>02</b> Recognize artistic and cultural value</p><p><b>03</b> Connect craft with people and interiors</p></div></div>
       </section>
 
-      <section className="artisans" id="artisans" aria-labelledby="artisans-title"><div className="section-head"><p className="side-label">03 — Featured Colombian artisans</p><div><h2 id="artisans-title">Five makers.<br />Many ways of seeing.</h2><p className="makers-intro">An editorial selection to explore: makers whose documented techniques, teaching, and cultural roots offer meaningful ways to approach Colombian craft. These features do not imply representation or a commercial relationship.</p></div></div><div className="maker-list">{makers.map((maker, index) => <article className="maker" key={maker.name}><span className="maker-number">0{index + 1}</span><div><p className="eyebrow">{maker.place}</p><h3>{maker.name}</h3><p className="craft">{maker.craft}</p></div><div><p className="maker-description">{maker.text}</p><a href={maker.url} className="text-link">Read the artisan’s story <Arrow /></a><p className="source-credit">Source: Artesanías de Colombia</p></div></article>)}</div></section>
+      <section className="artisans" id="artisans" aria-labelledby="artisans-title"><div className="section-head"><p className="side-label">03 — Featured Colombian artisans</p><div><h2 id="artisans-title">Five makers.<br />Many ways of seeing.</h2><p className="makers-intro">Five workshops from my evolving selection, each offering a distinct encounter with material, place and inherited knowledge. Featured for discovery; inclusion does not imply representation or a commercial partnership.</p></div></div><div className="maker-list">{makers.map((maker, index) => <article className="maker" key={maker.name}><span className="maker-number">0{index + 1}</span><div><p className="eyebrow">{maker.place}</p><h3>{maker.name}</h3><p className="craft">{maker.craft}</p></div><div><p className="maker-description">{maker.text}</p><a href={maker.url} className="text-link">Explore the workshop <Arrow /></a><p className="source-credit">Source: {maker.source}</p></div></article>)}</div></section>
 
       <section className="notes" id="notes" aria-labelledby="notes-title">
         <p className="eyebrow">Notes from the threshold</p><h2 id="notes-title">An evolving practice<br />of <em>attention.</em></h2>
