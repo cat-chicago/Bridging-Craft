@@ -53,14 +53,14 @@ function App() {
   const close = () => setOpen(false)
   return <>
     <header className="nav">
-      <div className="brand"><a className="wordmark" href="#top" onClick={close}>Bridging <i>Craft</i></a><p className="brand-credit">a page from <a href={substack}>Bridging Chapters</a></p></div>
+      <div className="brand"><a className="wordmark" href="#top" onClick={close}>Bridging <i>Craft</i></a><p className="brand-credit">A page from <a href={substack}>Bridging Chapters</a></p></div>
       <button className="menu" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="site-menu">{open ? 'Close' : 'Menu'}</button>
       <nav id="site-menu" className={open ? 'open' : ''} aria-label="Main navigation">
         <a href="#about" onClick={close}>About</a><a href="#artisans" onClick={close}>Artisans</a><a href="#notes" onClick={close}>Notes</a>
       </nav>
     </header>
     <main id="top">
-      <div className="brand-banner"><img src={`${import.meta.env.BASE_URL}images/bridging-craft-header.png`} alt="Bridging Craft — Cultivating discernment at the intersection of art, heritage, and culture" fetchPriority="high" /></div>
+      <div className="brand-banner"><img src={`${import.meta.env.BASE_URL}images/bridging-craft-header-title-case.png`} alt="Bridging Craft — Cultivating discernment at the intersection of art, heritage, and culture" fetchPriority="high" /></div>
       <section className="hero" aria-labelledby="hero-title">
         <p className="eyebrow">Colombian craft · Collectors · Interiors</p>
         <h1 id="hero-title">Between the <em>made</em><br />and the spaces<br />we inhabit.</h1>
@@ -70,7 +70,7 @@ function App() {
 
       <section className="manifesto" id="about" aria-labelledby="about-title">
         <p className="side-label">01 — A new vantage</p>
-        <div><h2 id="about-title">Learning to become<br />the bridge.</h2><p className="intro">After a 20-year career in marketing in the consumer packaged goods (CPG) industry, I am turning toward art, craft, and interiors, developing the discernment and relationships this next chapter calls for.</p><div className="story-copy" id="path"><img className="idi-logo" src={`${import.meta.env.BASE_URL}images/idi-logo.png`} alt="The Interior Design Institute" loading="lazy" /><p>I completed the Interior Design Institute (IDI) online program to build fluency in space, materials, and design thinking—a foundation for understanding how craft and interiors speak to one another.</p><p>This was a deliberate first step before a full-time interior design diploma in Florence, Italy. Along the way, I am developing my eye, learning from makers, and building connections across the arts.</p></div></div>
+        <div><h2 id="about-title">Learning to become<br />the bridge.</h2><p className="intro">After a 20-year career in marketing in the consumer packaged goods (CPG) industry, I am turning toward art, craft, and interiors, developing the discernment and relationships this next chapter calls for.</p><div className="story-copy" id="path"><p>I completed the Interior Design Institute (IDI) online program to build fluency in space, materials, and design thinking—a foundation for understanding how craft and interiors speak to one another.</p><p>This was a deliberate first step before a full-time interior design diploma in Florence, Italy. Along the way, I am developing my eye, learning from makers, and building connections across the arts.</p><img className="idi-logo" src={`${import.meta.env.BASE_URL}images/idi-wide.png`} alt="Interior Design Institute — Graduate" loading="lazy" /></div></div>
       </section>
 
       <section className="principles" aria-labelledby="principles-title">
