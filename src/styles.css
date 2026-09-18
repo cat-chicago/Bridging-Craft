@@ -8,8 +8,8 @@
 /* Sans-serif headings keep comfortable spacing at every breakpoint. */
 /* Reader-requested emphasis and a warm, high-contrast notes palette. */
 .nav .brand>.wordmark{display:none}
-.brand-credit{font-size:16px}
-.brand-credit a{font-size:20px;font-weight:500;color:#94452f}
+.brand-credit{font-size:13px}
+.brand-credit a{font-size:inherit;font-weight:400;color:#686157}
 .brand-credit a:hover{color:#502419}
 body .hero-bottom p{font-size:clamp(18px,1.65vw,22px);line-height:1.6}
 .intro-cta{font-size:16px;font-weight:600;color:#94452f;border-color:currentColor;line-height:1.5;letter-spacing:.04em}
