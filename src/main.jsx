@@ -80,6 +80,10 @@ function App() {
 
       <section className="artisans" id="artisans" aria-labelledby="artisans-title"><div className="section-head"><p className="side-label">03 — Featured Colombian artisans</p><div><h2 id="artisans-title">Five makers.<br />Many ways of seeing.</h2><p className="makers-intro">Five workshops from my evolving selection, each offering a distinct encounter with material, place and inherited knowledge. Featured for discovery; inclusion does not imply representation or a commercial partnership.</p></div></div><div className="maker-list">{makers.map((maker, index) => <article className="maker" key={maker.name}><span className="maker-number">0{index + 1}</span><div><p className="eyebrow">{maker.place}</p><p className="craft">{maker.craft}</p><h3>{maker.name}</h3></div><div><p className="maker-description">{maker.text}</p><a href={maker.url} className="text-link">Explore the workshop <Arrow /></a><p className="source-credit">Source: {maker.source}</p></div></article>)}</div></section>
 
+      <section className="catalog-intro" id="catalog" aria-labelledby="catalog-title">
+        <p className="side-label">04 — The catalog</p><div><h2 id="catalog-title">Craft to live with.</h2><p>Discover an evolving selection of Colombian textiles, explore the details, and gather the pieces that speak to you.</p><a className="text-link" href={`${import.meta.env.BASE_URL}catalog/`}>Explore the catalog <Arrow /></a></div>
+      </section>
+
       <section className="notes" id="notes" aria-labelledby="notes-title">
         <p className="eyebrow">Notes from the threshold</p><h2 id="notes-title">An evolving practice<br />of <em>attention.</em></h2>
         <p>Bridging Craft is a place to follow the questions, references, and encounters that gather along the way.</p>
