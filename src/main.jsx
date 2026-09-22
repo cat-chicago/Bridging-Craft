@@ -64,7 +64,7 @@ function App() {
       <section className="hero" aria-labelledby="hero-title">
         <p className="eyebrow">Colombian craft · Collectors · Interiors</p>
         <h1 id="hero-title">Between the <em>made</em><br />and the spaces<br />we inhabit.</h1>
-        <div className="hero-bottom"><div><p>Colombian craft holds stories worth living with. I am building connections that bring those stories into thoughtfully collected lives and spaces. It begins with understanding the maker, the material, and the cultural value of a piece.</p><a className="text-link intro-cta" href="contact.html">Begin a conversation <Arrow /></a></div><a href="#about" className="round-link" aria-label="Read the story">↓</a></div>
+        <div className="hero-bottom"><div><p>Colombian craft holds stories worth living with. I am building connections that bring those stories into thoughtfully collected lives and spaces. It begins with understanding the maker, the material, and the cultural value of a piece. Drawing on my professional knowledge, Colombian cultural roots, and lived experiences, I am creating a space for dialogue and discovery for those seeking beauty and authentic craft.</p><a className="text-link intro-cta" href="contact.html">Begin a conversation <Arrow /></a></div><a href="#about" className="round-link" aria-label="Read the story">↓</a></div>
         <div className="arc" aria-hidden="true"></div>
       </section>
 
